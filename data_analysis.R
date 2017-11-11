@@ -1,12 +1,13 @@
 ## run_analysis.R 
 
 ## Set your working directory here if needed
-setwd("C:/Olga/Coursera/Data Science/data_cleaning/data/uci_har_dataset")
+#setwd(<your working directory>)
+
 print (paste0("You current working directory is: ", getwd()))
 
-## 0. Download project data and upload it to R.
-## Uncomment this section if you need to download the dataset and comment the first command 
-## In Section 1.
+## Step 0. Optional Download project data and upload it to R.
+## Uncomment this section if you need to download the dataset.
+## NOTE: you will need to comment the first command in Section 1 (data_path = ".").
 
 #data_path = "./data/uci_har_dataset"
 #if(!file.exists(data_path)){
@@ -30,7 +31,7 @@ print (paste0("You current working directory is: ", getwd()))
 #unlink(temp_file)
 
 
-## 1. Merge the training and the test sets to create one data set.
+## Step 1. Merge the training and the test sets to create one data set.
 
 data_path = "."
 library(dplyr)
@@ -71,7 +72,7 @@ activities_set$sample_id <- 1:nrow(activities_set)
 dim(activities_set)
 
 
-## 2. Extracts only the measurements on the mean and standard deviation for each measurement.
+## Step 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 
 selected_features_id <- grep("(-mean\\(\\)|-std\\(\\))", features$feature_name)
 measurements_set <- measurements_set[, selected_features_id]
@@ -79,16 +80,16 @@ measurements_set$sample_id <- 1:nrow(measurements_set)
 dim(measurements_set)
 print(paste0("Selected measurments Table dimentions: ", as.character(dim(measurements_set))))
 
-## 3. Uses descriptive activity names to name the activities in the data set
+## Step 3. Uses descriptive activity names to name the activities in the data set
 measurements_set <- merge(measurements_set, activities_set, by.x = "sample_id", by.y = "sample_id", all = FALSE)
 dim(measurements_set)
 print(paste0("Selected measurments/activities Table dimentions: ", as.character(dim(measurements_set))))
 
-## 4. Appropriately labels the data set with descriptive variable names
+## Step 4. Appropriately labels the data set with descriptive variable names
 ## Done during Step 1.5
 
 
-## 5. From the data set in step 4, creates a second, independent tidy data set 
+## Step 5. From the data set in step 4, creates a second, independent tidy data set 
 ##    with the average of each variable for each activity and each subject.
 tidy_set <- merge(measurements_set, subjects_set, by.x = "sample_id", by.y = "sample_id", all = FALSE)
 tidy_set <- select(tidy_set, -sample_id)
@@ -101,7 +102,9 @@ tidy_set<- summarize_all(tidy_set, funs(mean))
 ## Sanity check
 dim(tidy_set)
 print(paste0("Tidy Table dimentions: ", as.character(dim(tidy_set))))
-## 6. Save Tidy Table into a TXT file and Output it as View
+
+
+## Step 6. Save Tidy Table into a TXT file and Output it as View
 View(tidy_set)
 tidy_file_name = paste0(data_path, "/tidy_table.txt")
 write.table(tidy_set, file = tidy_file_name, row.names = FALSE)
