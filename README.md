@@ -12,7 +12,7 @@ The experiments have been carried out with a group of 30 volunteers. Each person
 
 The following files were available for both train and test data. Their descriptions are equivalent. 
 * 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-* 'train/X_train.txt': Training set. Contains a 561-feature vector with time and frequency domain variables. Acceleration variables are is standard gravity units 'g', angular velocity variables are in radians/second units. Features are normalized and bounded within [-1,1].
+* 'train/X_train.txt': Training set. Contains a 561-feature vector with time and frequency domain variables. Acceleration variables are in standard gravity units 'g', angular velocity variables are in radians/second units. Features are normalized and bounded within [-1,1].
 * 'train/y_train.txt': Training labels. Links each window sample with the activity for that window sample.
 
 ## The project goal:
