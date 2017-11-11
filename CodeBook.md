@@ -7,6 +7,7 @@ Each row contains averages of all mean() and std() type variables for a distinct
 ## Variables description:
 
 subject_id (integer): Identifies the subject who performed the activity. Its range is from 1 to 30. 
+
 activity_name (factor): Name of the activity performed. Can take one of the following values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
 All other variables (listed below) are of numeric type. 
