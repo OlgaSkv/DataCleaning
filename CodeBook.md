@@ -12,7 +12,7 @@ activity_name (factor): Name of the activity performed. Can take one of the foll
 
 All other variables (listed below) are of numeric type. 
 These variables are averages of mean() and std() type variables for time and frequency domain variables. 
-Acceleration variables are is standard gravity units 'g'.
+Acceleration variables are in standard gravity units 'g'.
 Angular velocity variables are in radians/second units. 
 All domain variables are normalized and bounded within [-1,1].
 
