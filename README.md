@@ -16,11 +16,12 @@ The following files were available for both train and test data. Their descripti
 * 'train/y_train.txt': Training labels. Links each window sample with the activity for that window sample.
 
 ## The project goal:
-To produce a tidy table (" the Tidy Table")that would contain averages of all mean() and std() type variables for each activity and each subject.
+To produce a tidy data set ("the Tidy Table") that would contain averages of all mean() and std() type variables for each activity and each subject.
 
 ## Steps to perform:
-Run run_analysis.R script in the directory that contains the Samsung data raw files. You can modify the script by uncommenting "Step 0" to download raw data from the Internet source if needed.
-The script will generate R View object containing the Tidy Table. It will also save content of the Tidy Table into a text file called "tidy_table.txt". The output file will be created in the same raw files directory.
+Run run_analysis.R script in the directory that contains the Samsung data raw files. You can modify the script by uncommenting "Step 0" to download raw data from the Internet source if needed. All the steps performed in the script are well documented using Comments.
+
+The script will generate R View object containing the Tidy Table data. It will also save content of the Tidy Table into a text file called "tidy_table.txt". The output TXT file will be created in the raw files directory.
 
 
 
