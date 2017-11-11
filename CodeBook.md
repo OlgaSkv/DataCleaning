@@ -15,7 +15,7 @@ These variables are averages of mean() and std() type variables for time and fre
 Acceleration variables are in standard gravity units 'g'.
 Angular velocity variables are in radians/second units. 
 All domain variables are normalized and bounded within [-1,1].
-Variable descriptions can be found in "features_info.txt" file that is a part of the the original data set package. Variable names has been slightly modified ("()"symbols were elliminated) to improve readability.
+Variable descriptions can be found in "features_info.txt" file that is a part of the original data set package. Variable names has been slightly modified ("()"symbols were elliminated) to improve readability.
 
 * tBodyAcc-mean-X
 * tBodyAcc-mean-Y
